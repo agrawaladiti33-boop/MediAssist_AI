@@ -1,0 +1,14 @@
+Disease,Test_1,Test_2,Test_3,Test_4
+Allergy,Allergy Skin Test,Blood IgE Test,Physical Examination,Nasal Examination
+Fungal infection,Skin Scraping Test,Fungal Culture,Wood's Lamp Examination,Physical Examination
+GERD,Upper Endoscopy,pH Monitoring,Barium Swallow,Esophageal Manometry
+Chronic cholestasis,Liver Function Test,Ultrasound Abdomen,MRCP,Blood Test
+Drug Reaction,Blood Test,Physical Examination,Allergy Testing,Liver Function Test
+Peptic ulcer diseae,Upper Endoscopy,H. pylori Test,Stool Test,Blood Test
+AIDS,HIV Antibody Test,CD4 Count,Viral Load Test,Complete Blood Count
+Diabetes ,Fasting Blood Sugar,HbA1c,Random Blood Sugar,Urine Test
+Hypertension ,Blood Pressure Monitoring,ECG,Echocardiogram,Kidney Function Test
+Migraine,Neurological Examination,MRI Brain,CT Scan,Blood Test
+Heart attack,ECG,Troponin Blood Test,Echocardiogram,Coronary Angiography
+Pneumonia,Chest X-ray,CBC,Sputum Culture,Pulse Oximetry
+Tuberculosis,Chest X-ray,Sputum Test,Mantoux Test,GeneXpert Test
