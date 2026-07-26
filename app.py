@@ -327,67 +327,53 @@ if st.button("🔍 Predict Disease"):
             if pd.notna(test):
                 st.write(f"🧪 {test}")
 
-    # ==========================
-    # 📄 Download PDF Report
-    # ==========================
-
-    # Convert dataframe rows into lists
+    #Download PDF Report
+    
+    #Convert dataframe rows into lists
     precaution_list = []
     if not precautions.empty:
         for i in range(1, 5):
             value = precautions[f"Precaution_{i}"].values[0]
             if pd.notna(value):
                 precaution_list.append(value)
-
     remedy_list = []
     if not home.empty:
         for i in range(1, 5):
             value = home[f"Home_Remedy_{i}"].values[0]
             if pd.notna(value):
                 remedy_list.append(value)
-
     food_list = []
     if not foods.empty:
         for i in range(1, 5):
             value = foods[f"Food_{i}"].values[0]
             if pd.notna(value):
                 food_list.append(value)
-
     test_list = []
     if not tests.empty:
         for i in range(1, 5):
             value = tests[f"Test_{i}"].values[0]
             if pd.notna(value):
                 test_list.append(value)
-
-    
     pdf = generate_pdf(
     name=patient_name if add_patient_info else "Not Provided",
     age=age if add_patient_info else "Not Provided",
     gender=gender if add_patient_info else "Not Provided",
-
     disease=predicted_disease,
     doctor=doctor,
-
     description=description.values[0] if not description.empty else "Not Available",
-
     precautions=precaution_list,
     remedies=remedy_list,
     foods=food_list,
     tests=test_list,
-
     symptoms=selected_display,
     confidence=confidence,
-
     bmi=bmi if add_patient_info else None,
     blood_group=blood_group if add_patient_info else None,
     height=height if add_patient_info else None,
     weight=weight if add_patient_info else None,
-
     existing_disease=existing_disease if add_patient_info else None,
     allergies=allergies if add_patient_info else None
 )
-
     st.download_button(
         label="📄 Download Diagnosis Report",
         data=pdf,
@@ -395,5 +381,4 @@ if st.button("🔍 Predict Disease"):
         mime="application/pdf"
     )
 st.divider()
-
 st.caption("© 2026 MediAssist AI | Developed by Aditi Agrawal | IBM NASSCOM GenAI Project")
