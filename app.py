@@ -407,7 +407,6 @@ if st.button("🔍 Predict Disease"):
                 model="gemini-3.6-flash",
                 input=prompt
             )
-        
-        st.info(response.output_text)
+    st.info(response.output_text)
 st.divider()
 st.caption("© 2026 MediAssist AI | Developed by Aditi Agrawal | IBM NASSCOM GenAI Project")
