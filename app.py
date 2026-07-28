@@ -261,35 +261,6 @@ if st.button("🔍 Predict Disease"):
     st.warning(f"👨‍⚕️ Recommended Doctor: **{doctor}**")
     st.divider()
 
-    #AI Health Explanation
-    st.subheader("🤖 AI Health Explanation")
-    prompt = f"""
-    The user selected these symptoms:
-    {', '.join(selected_symptoms)}
-
-    The machine learning model predicted:
-
-    {predicted_disease}
-
-    Provide an educational explanation in simple English.
-
-    Include:
-    1. What this disease is.
-    2. Why these symptoms may be associated with it.
-    3. General lifestyle precautions.
-    4. Which medical specialist is appropriate.
-    Keep the response under 150 words.
-
-    Do not provide a diagnosis or prescribe medications.
-    Clearly state that this is not a substitute for professional medical advice.
-    """
-    response = client.interactions.create(
-                model="gemini-3.6-flash",
-                input=prompt
-            )
-        
-        st.info(response.output_text)
-
     #Home Remedies
     home = home_df.loc[
         home_df["Disease"] == predicted_disease
