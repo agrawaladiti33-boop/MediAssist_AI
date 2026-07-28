@@ -283,11 +283,12 @@ if st.button("🔍 Predict Disease"):
     Do not provide a diagnosis or prescribe medications.
     Clearly state that this is not a substitute for professional medical advice.
     """
-    response = client.models.generate_content(
-        model="gemini-3.5-flash",
-        contents=prompt
-    )
-    st.info(response.text)
+    response = client.interactions.create(
+                model="gemini-3.6-flash",
+                input=prompt
+            )
+        
+        st.info(response.output_text)
 
     #Home Remedies
     home = home_df.loc[
